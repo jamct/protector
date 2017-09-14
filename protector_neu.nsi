@@ -109,7 +109,7 @@ ${EndIf}
          !define MUI_ABORTWARNING "Hiermit beenden Sie die Einrichtung von c't Windows Protec'tor"
          !define MUI_ICON "ct.ico"
          !define MUI_WELCOMEPAGE_TITLE "Windows Protec'tor"
-         !define MUI_WELCOMEPAGE_TEXT "Mit Windows Protec'tor sichern Sie Windows, Office und den Acrobat Reader ab. Dazu werden vor allem Funktionen deaktiviert, auf die viele Benutzer verzichten können. Auf der nächsten Seite haben Sie die Möglichkeit, die für Sie geeigneten Maßnahmen auszuwählen. $\r$\n$\r$\nInformationen und Updates unter https://www.ct.de/protector"
+         !define MUI_WELCOMEPAGE_TEXT "Mit Windows Protec'tor sichern Sie Windows, Office und den Acrobat Reader ab. Dazu werden vor allem Funktionen deaktiviert, auf die viele Benutzer verzichten können. Auf der nächsten Seite haben Sie die Möglichkeit, die für Sie geeigneten Maßnahmen auszuwählen. $\r$\n$\r$\nInformationen und Updates unter https://www.ct.de/yt8z"
          !define MUI_UNTEXT_FINISH_TITLE "Abgeschlossen."
          !define MUI_UNTEXT_FINISH_SUBTITLE ""
          !define MUI_UNTEXT_ABORT_TITLE "Abgebrochen"
