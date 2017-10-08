@@ -100,8 +100,8 @@ FunctionEnd
 UserInfo::GetAccountType
 pop $0
 ${If} $0 != "admin" ;Administratorrechte einfordern
-        messageBox mb_iconstop "Windows Protec'tor muss mit Administratorrechten ausgeführt werden."
-        setErrorLevel 740 ;Keine Ausführung ohne Administratorrechte
+        messageBox mb_iconstop "Windows Protec'tor muss mit Administratorrechten ausgefÃ¼hrt werden."
+        setErrorLevel 740 ;Keine AusfÃ¼hrung ohne Administratorrechte
         quit
 ${EndIf}
 !macroend
@@ -109,21 +109,21 @@ ${EndIf}
          !define MUI_ABORTWARNING "Hiermit beenden Sie die Einrichtung von c't Windows Protec'tor"
          !define MUI_ICON "ct.ico"
          !define MUI_WELCOMEPAGE_TITLE "Windows Protec'tor"
-         !define MUI_WELCOMEPAGE_TEXT "Mit Windows Protec'tor sichern Sie Windows, Office und den Acrobat Reader ab. Dazu werden vor allem Funktionen deaktiviert, auf die viele Benutzer verzichten können. Auf der nächsten Seite haben Sie die Möglichkeit, die für Sie geeigneten Maßnahmen auszuwählen. $\r$\n$\r$\nInformationen und Updates unter https://www.ct.de/yt8z"
+         !define MUI_WELCOMEPAGE_TEXT "Mit Windows Protec'tor sichern Sie Windows, Office und den Acrobat Reader ab. Dazu werden vor allem Funktionen deaktiviert, auf die viele Benutzer verzichten kÃ¶nnen. Auf der nÃ¤chsten Seite haben Sie die MÃ¶glichkeit, die fÃ¼r Sie geeigneten MaÃŸnahmen auszuwÃ¤hlen. $\r$\n$\r$\nInformationen und Updates unter https://www.ct.de/yt8z"
          !define MUI_UNTEXT_FINISH_TITLE "Abgeschlossen."
          !define MUI_UNTEXT_FINISH_SUBTITLE ""
          !define MUI_UNTEXT_ABORT_TITLE "Abgebrochen"
          !define MUI_UNTEXT_ABORT_SUBTITLE ""
 
-         !define MUI_PAGE_HEADER_TEXT "Maßnahmen auswählen"
-         !define MUI_PAGE_HEADER_SUBTEXT "Funktionen deaktivieren, um die Sicherheit zu erhöhen."
-         !define MUI_COMPONENTSPAGE_TEXT_TOP "Lesen Sie die Beschreibungen gründlich. Ein Haken sorgt dafür, dass eine Härtungsmaßnahme aktiviert wird."
-         !define MUI_COMPONENTSPAGE_TEXT_COMPLIST "Alle Härtungs-Maßnahmen"
+         !define MUI_PAGE_HEADER_TEXT "MaÃŸnahmen auswÃ¤hlen"
+         !define MUI_PAGE_HEADER_SUBTEXT "Funktionen deaktivieren, um die Sicherheit zu erhÃ¶hen."
+         !define MUI_COMPONENTSPAGE_TEXT_TOP "Lesen Sie die Beschreibungen grÃ¼ndlich. Ein Haken sorgt dafÃ¼r, dass eine HÃ¤rtungsmaÃŸnahme aktiviert wird."
+         !define MUI_COMPONENTSPAGE_TEXT_COMPLIST "Alle HÃ¤rtungs-MaÃŸnahmen"
 
         !define MUI_COMPONENTSPAGE_TEXT_INSTTYPE ""
 
-        !define MUI_COMPONENTSPAGE_TEXT_DESCRIPTION_TITLE "Beschreibung der Maßnahme"
-        !define MUI_COMPONENTSPAGE_TEXT_DESCRIPTION_INFO "Fahren Sie mit der Maus über die Maßnahmen, um Details zu sehen."
+        !define MUI_COMPONENTSPAGE_TEXT_DESCRIPTION_TITLE "Beschreibung der MaÃŸnahme"
+        !define MUI_COMPONENTSPAGE_TEXT_DESCRIPTION_INFO "Fahren Sie mit der Maus Ã¼ber die MaÃŸnahmen, um Details zu sehen."
 
 InstallDir "$PROGRAMFILES\ctProtector"
 
@@ -132,7 +132,7 @@ InstallDir "$PROGRAMFILES\ctProtector"
 
   VIAddVersionKey /LANG=${LANG_GERMAN} "ProductName" "Windows Protec'tor"
 VIAddVersionKey /LANG=${LANG_GERMAN} "Comments" ""
-VIAddVersionKey /LANG=${LANG_GERMAN} "CompanyName" "c't Magazin für Computertechnik"
+VIAddVersionKey /LANG=${LANG_GERMAN} "CompanyName" "c't Magazin fÃ¼r Computertechnik"
 VIAddVersionKey /LANG=${LANG_GERMAN} "LegalTrademarks" ""
 VIAddVersionKey /LANG=${LANG_GERMAN} "LegalCopyright" "GNU General Public License v3.0"
 VIAddVersionKey /LANG=${LANG_GERMAN} "FileDescription" ""
@@ -322,9 +322,9 @@ SectionGroup "Windows"
                               
                               DetailPrint "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoDriveTypeAutoRun auf 181 gesetzt"
                               WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" "NoDriveTypeAutoRun" 181
-                               DetailPrint "AutoRun für alle Laufwerke deaktiviert."
+                               DetailPrint "AutoRun fÃ¼r alle Laufwerke deaktiviert."
                         ${ELSE}
-                               DetailPrint "AutoRun ist bereits für alle Laufwerke deaktiviert."
+                               DetailPrint "AutoRun ist bereits fÃ¼r alle Laufwerke deaktiviert."
                         ${ENDIF}
                 
                         WriteRegDWORD HKCU "SOFTWARE\CT Protector\" "Autorun2" $beforeAutorun2
@@ -353,9 +353,9 @@ SectionGroup "Windows"
         Section "PowerShell und CMD verhindern" PowerShell
 
                 WriteRegDWORD HKCU "SOFTWARE\CT Protector\" "PowerShell" "1"
-                DetailPrint "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun cmd.exe hinzugefügt"
-                DetailPrint "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun powershell.exe hinzugefügt"
-                DetailPrint "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun powershell_ise.exe hinzugefügt"
+                DetailPrint "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun cmd.exe hinzugefÃ¼gt"
+                DetailPrint "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun powershell.exe hinzugefÃ¼gt"
+                DetailPrint "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun powershell_ise.exe hinzugefÃ¼gt"
         
                 WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" "55" "cmd.exe"
                 WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" "56" "powershell.exe"
@@ -368,19 +368,19 @@ SectionGroup "Windows"
         Section "User Account Control aktivieren" UAC
         
                               WriteRegDWORD HKCU "SOFTWARE\CT Protector\" "UAC" $beforeUAC
-                        ${IF} $beforeUAC != 181
+                        ${IF} $beforeUAC != 2
                               
                               DetailPrint "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\ConsentPromptBehaviorAdmin auf 2 gesetzt"
                               WriteRegDWORD HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "ConsentPromptBehaviorAdmin" 2
-                               DetailPrint "UAC auf höchster Stufe aktiviert."
+                               DetailPrint "UAC auf hÃ¶chster Stufe aktiviert."
                         ${ELSE}
-                               DetailPrint "UAC war bereits auf höchster Stufe."
+                               DetailPrint "UAC war bereits auf hÃ¶chster Stufe."
                         ${ENDIF}
 
         SectionEnd
 
 
-        Section "Bestimmte Dateiendungen nicht ausführen" FileExtensions
+        Section "Bestimmte Dateiendungen nicht ausfÃ¼hren" FileExtensions
         
          WriteRegDWORD HKCU "SOFTWARE\CT Protector\" "FileExtensions" "1"
 
@@ -558,7 +558,7 @@ SectionGroup "Acrobat Reader"
 
         SectionEnd
 
-        Section "Objektausführung in PDF verhindern" ReaderObjects
+        Section "ObjektausfÃ¼hrung in PDF verhindern" ReaderObjects
 
                  WriteRegDWORD HKCU "SOFTWARE\CT Protector\" "ReaderXIObject" $beforeReaderXIObject
 
@@ -568,10 +568,10 @@ SectionGroup "Acrobat Reader"
                               
                               WriteRegDWORD HKCU "SOFTWARE\Adobe\Acrobat Reader\XI\Originals" "bAllowOpenFile" 0
                               WriteRegDWORD HKCU "SOFTWARE\Adobe\Acrobat Reader\XI\Originals" "bSecureOpenFile" 1
-                              DetailPrint "Objektausführung in Adobe Reader XI deaktiv."
+                              DetailPrint "ObjektausfÃ¼hrung in Adobe Reader XI deaktiv."
 
                         ${ELSE}
-                               DetailPrint "Objektausführung in Adobe Reader XI war bereits deaktiv."
+                               DetailPrint "ObjektausfÃ¼hrung in Adobe Reader XI war bereits deaktiv."
                         ${ENDIF}
         ClearErrors
                         
@@ -582,10 +582,10 @@ SectionGroup "Acrobat Reader"
                               
                               WriteRegDWORD HKCU "SOFTWARE\Adobe\Acrobat Reader\DC\Originals" "bAllowOpenFile" 0
                               WriteRegDWORD HKCU "SOFTWARE\Adobe\Acrobat Reader\DC\Originals" "bSecureOpenFile" 1
-                              DetailPrint "Objektausführung in Adobe Reader DC deaktiv."
+                              DetailPrint "ObjektausfÃ¼hrung in Adobe Reader DC deaktiv."
 
                         ${ELSE}
-                               DetailPrint "Objektausführung in Adobe Reader DC war bereits deaktiv."
+                               DetailPrint "ObjektausfÃ¼hrung in Adobe Reader DC war bereits deaktiv."
                         ${ENDIF}
         ClearErrors
 
@@ -701,7 +701,7 @@ function .onInit
         !insertmacro UnselectSection "${ReaderJS}"
         !insertmacro UnselectSection "${ReaderObjects}"
         
-        ;Auslesen, welche Maßnahmen schon aktiviert wurden:
+        ;Auslesen, welche MaÃŸnahmen schon aktiviert wurden:
 
         ReadRegDWORD $isset HKCU "SOFTWARE\CT Protector\" "WordOLE"
 
@@ -827,20 +827,20 @@ function .onInit
 functionEnd
 
   ;Language strings
-  LangString DESC_ScriptHost ${LANG_GERMAN} "Verhindert die Ausführung von VBScript und Javascript. Nicht geeignet für Entwickler."
-  LangString DESC_AutoPlay ${LANG_GERMAN} "AutoRun und AutoPlay für alle Wechselmedien abschalten."
-  LangString DESC_PowerShell ${LANG_GERMAN} "PowerShell und Eingabeaufforderung abschalten. Nicht für fortgeschrittene Benutzer."
-  LangString DESC_UAC ${LANG_GERMAN} "User Account Control auf höchste Stufe einstellen. Sorgt für mehr Sicherheits-Abfragen."
-  LangString DESC_FileExtensions ${LANG_GERMAN} "Zuordnung für Dateizuordnungen wie hta, js, jes,wsh, wsf, scr,vbs verhindern. Nicht für Entwickler geeignet."
+  LangString DESC_ScriptHost ${LANG_GERMAN} "Verhindert die AusfÃ¼hrung von VBScript und Javascript. Nicht geeignet fÃ¼r Entwickler."
+  LangString DESC_AutoPlay ${LANG_GERMAN} "AutoRun und AutoPlay fÃ¼r alle Wechselmedien abschalten."
+  LangString DESC_PowerShell ${LANG_GERMAN} "PowerShell und Eingabeaufforderung abschalten. Nicht fÃ¼r fortgeschrittene Benutzer."
+  LangString DESC_UAC ${LANG_GERMAN} "User Account Control auf hÃ¶chste Stufe einstellen. Sorgt fÃ¼r mehr Sicherheits-Abfragen."
+  LangString DESC_FileExtensions ${LANG_GERMAN} "Zuordnung fÃ¼r Dateizuordnungen wie hta, js, jes,wsh, wsf, scr,vbs verhindern. Nicht fÃ¼r Entwickler geeignet."
   LangString DESC_FileShowExtensions ${LANG_GERMAN} "Dateiendungen immer anzeigen. Hat keine Nachteile."
  
-  LangString DESC_WordMakros ${LANG_GERMAN} "Makros in Word abschalten. Nicht geeignet für Büro-Umgebungen."
-  LangString DESC_ExcelMakros ${LANG_GERMAN} "Makros in Excel abschalten. Nicht geeignet für Büro-Umgebungen."
-  LangString DESC_PowerPointMakros ${LANG_GERMAN} "Makros in PowerPoint abschalten. Nicht geeignet für Büro-Umgebungen."
-  LangString DESC_OLE ${LANG_GERMAN} "OLE-Ausführung verhindern. Wird benutzt, um Office-Dokumente ineinander zu verschachteln."
-  LangString DESC_ActiveX ${LANG_GERMAN} "ActiveX-Elemente in Office nicht ausführen. Hängt eng mit Makros zusammen, nicht für Büro-Umgebungen."
+  LangString DESC_WordMakros ${LANG_GERMAN} "Makros in Word abschalten. Nicht geeignet fÃ¼r BÃ¼ro-Umgebungen."
+  LangString DESC_ExcelMakros ${LANG_GERMAN} "Makros in Excel abschalten. Nicht geeignet fÃ¼r BÃ¼ro-Umgebungen."
+  LangString DESC_PowerPointMakros ${LANG_GERMAN} "Makros in PowerPoint abschalten. Nicht geeignet fÃ¼r BÃ¼ro-Umgebungen."
+  LangString DESC_OLE ${LANG_GERMAN} "OLE-AusfÃ¼hrung verhindern. Wird benutzt, um Office-Dokumente ineinander zu verschachteln."
+  LangString DESC_ActiveX ${LANG_GERMAN} "ActiveX-Elemente in Office nicht ausfÃ¼hren. HÃ¤ngt eng mit Makros zusammen, nicht fÃ¼r BÃ¼ro-Umgebungen."
 
-  LangString DESC_ReaderJS ${LANG_GERMAN} "In PDF-Dateien kann JavaScript integriert werden. Das bot in der Vergangenheit immer mal wieder Angriffsflächen, wird im Alltag zunehmend weniger eingesetzt. Interaktive Formulare funktionieren ohne JavaScript nicht mehr."
+  LangString DESC_ReaderJS ${LANG_GERMAN} "In PDF-Dateien kann JavaScript integriert werden. Das bot in der Vergangenheit immer mal wieder AngriffsflÃ¤chen, wird im Alltag zunehmend weniger eingesetzt. Interaktive Formulare funktionieren ohne JavaScript nicht mehr."
   LangString DESC_ReaderObjects ${LANG_GERMAN} "Die Einbettung von Objekten in PDF-Dateien wird nur sehr selten in der Praxis genutzt. Die negativen Folgen sind also gering."
   
   
@@ -876,6 +876,6 @@ Section "Uninstall"
   Call un.setDefaults
                 
                 DeleteRegKey HKCU "SOFTWARE\CT Protector"
-                DetailPrint "Die Einstellungen wurden zurückgesetzt."
+                DetailPrint "Die Einstellungen wurden zurÃ¼ckgesetzt."
 
 SectionEnd
