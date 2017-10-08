@@ -368,7 +368,7 @@ SectionGroup "Windows"
         Section "User Account Control aktivieren" UAC
         
                               WriteRegDWORD HKCU "SOFTWARE\CT Protector\" "UAC" $beforeUAC
-                        ${IF} $beforeUAC != 181
+                        ${IF} $beforeUAC != 2
                               
                               DetailPrint "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\ConsentPromptBehaviorAdmin auf 2 gesetzt"
                               WriteRegDWORD HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "ConsentPromptBehaviorAdmin" 2
